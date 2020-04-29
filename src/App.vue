@@ -1,13 +1,11 @@
 <template>
-  <div id="app" class="container">
+  <div id="app">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <Header></Header>
     <div class="card">
         <div class="card-header" id="chart-indoneisa"> INDONESIA </div>
-        <div class="card-body">
-            <Dashboard />
-        </div>
+            <chartIndonesia />
     </div>
   </div>
 </template>
@@ -15,12 +13,12 @@
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 import Header from './components/header.vue'
-import Dashboard from './components/dashboard/Indonesia.vue'
+import chartIndonesia from './components/dashboard/Indonesia.vue'
 export default {
   name: 'App',
   components: {
       Header,
-      Dashboard
+      chartIndonesia
   }
 }
 </script>
@@ -32,6 +30,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+.card {
+    width: 70%;
+    margin-top: 20px;
+    left: 15%;
+}
+
 </style>

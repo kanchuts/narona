@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="menu">
         <b-navbar toggleable="lg" type="dark" variant="info">
             <b-navbar-brand href="#">NARONA</b-navbar-brand>
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -27,3 +27,9 @@ export default {
     name: "Header"
 }
 </script>
+
+<style>
+    .menu{
+       width: 100%;
+    }
+</style>
