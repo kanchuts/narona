@@ -1,13 +1,14 @@
-<template v-slot:content>
-
+<template>
+<div class="card">
+<div class="card-header" id="chart-indoneisa"> INDONESIA </div>
         <div class="card-body" style="height: auto">
          <content-loader :is-loading="isLoading" @refresh-data="renderChartIndonesia">
-            <template>
+            <template v-slot: content>
                 <highcharts :options="chartOption"></highcharts>
             </template>
         </content-loader>
         </div>
-    
+</div>
 </template>
 
 <script>
@@ -107,5 +108,9 @@ export default {
 }
 </script>
 <style scoped>
-
+.card {
+    width: 70%;
+    margin-top: 20px;
+    left: 15%;
+}
 </style>

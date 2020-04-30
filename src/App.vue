@@ -3,10 +3,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <Header></Header>
-    <div class="card">
-        <div class="card-header" id="chart-indoneisa"> INDONESIA </div>
-            <chartIndonesia />
-    </div>
+        <chartIndonesia />
+        <StatistikIndonesia />
+        <chartIndonesia/>
+        <StatistikIndonesia />
   </div>
 </template>
 
@@ -14,11 +14,13 @@
 // import HelloWorld from './components/HelloWorld.vue'
 import Header from './components/header.vue'
 import chartIndonesia from './components/dashboard/Indonesia.vue'
+import StatistikIndonesia from './components/dashboard/Indostat.vue'
 export default {
   name: 'App',
   components: {
       Header,
-      chartIndonesia
+      chartIndonesia,
+      StatistikIndonesia
   }
 }
 </script>
@@ -31,10 +33,6 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-.card {
-    width: 70%;
-    margin-top: 20px;
-    left: 15%;
-}
+
 
 </style>
