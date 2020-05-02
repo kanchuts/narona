@@ -5,7 +5,7 @@
     <Header></Header>
         <chartIndonesia />
         <StatistikIndonesia />
-        <chartIndonesia/>
+        <chart/>
         <StatistikIndonesia />
   </div>
 </template>
@@ -15,12 +15,14 @@
 import Header from './components/header.vue'
 import chartIndonesia from './components/dashboard/Indonesia.vue'
 import StatistikIndonesia from './components/dashboard/Indostat.vue'
+// import chart from './components/dashboard/Tumbal.vue'
 export default {
   name: 'App',
   components: {
       Header,
       chartIndonesia,
-      StatistikIndonesia
+      StatistikIndonesia,
+    //   chart
   }
 }
 </script>

@@ -17,7 +17,7 @@ import moment from 'moment'
 const apiService = new APIServiceIndonesia()
 
 export default {
-    name: "chartIndonesia",
+    name: "chart",
     components: {
     //    ContentLoader,
        highcharts: Chart

@@ -1,5 +1,5 @@
 import axios from 'axios'
-const API_URL = 'https://api.covid19api.com/country'
+const API_URL = 'https://api.covid19api.com/'
 
 export class APIServiceIndonesia {
 
@@ -8,8 +8,9 @@ export class APIServiceIndonesia {
     }
 
     getDataIndonesia() {
-        const url = `${API_URL}/indonesia`
+        const url = `${API_URL}/country/indonesia`
         let data = axios.get(url).then(Response => Response.data)
+        
         return data
     }
 }
