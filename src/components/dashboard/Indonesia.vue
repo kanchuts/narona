@@ -1,10 +1,9 @@
 <template>
-<div class="card">
-<div class="card-header" id="chart-indoneisa"> INDONESIA </div>
+
         <div class="card-body" style="height: auto">
                 <highcharts :options="chartOption"></highcharts>
         </div>
-</div>
+
 </template>
 
 <script>
@@ -28,6 +27,10 @@ export default {
             chartOption: {
                 chart: {
                     type: 'areaspline',
+                    backgroundColor: null,
+                    style: {
+                            fontFamily: 'Signika, serif'
+                    }
                 },
                 title: {
                     text: ''
@@ -40,6 +43,11 @@ export default {
                     y: 100,
                     floating: true,
                     borderWidth: 1,
+                    backgroundColor: '#E0E0E8',
+                    itemStyle: {
+                        fontWeight: 'bold',
+                        fontSize: '12px'
+                    }
 
                 },
                 xAxis: {
@@ -56,12 +64,15 @@ export default {
                 },
                 tooltip: {
                     shared: true,
-                    valueSuffix: 'orang'
+                    valueSuffix: ' orang'
                 },
                 plotOptions: {
                     areaspline: {
                         fillOpacity: 0.5
-                    }
+                    },
+                    candlestick: {
+                        lineColor: '#404048'
+                    },
                 },
                 credits: {
                     text: 'Source',
@@ -90,8 +101,9 @@ export default {
                     dataPositif.push(day.Confirmed)
                     dataSembuh.push(day.Recovered)
                     dataMeninggal.push(day.Deaths)
-
+                   
                     }
+
                     this.chartOption.xAxis.categories = dates
                     this.chartOption.xAxis.tickInterval = tickInterval
                     this.chartOption.series.push({name: 'positif', data: dataPositif})
@@ -110,9 +122,5 @@ export default {
 
 </script>
 <style scoped>
-.card {
-    width: 70%;
-    margin-top: 20px;
-    left: 15%;
-}
+
 </style>
