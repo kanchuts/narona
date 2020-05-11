@@ -21,4 +21,11 @@ export class APIServiceIndonesia {
         
         return data
     }
+
+    getDataProvinsi(){
+        const url = `${API_URL1}/provinsi`
+        let data = axios.get(url).then(Response => Response.data)
+
+        return data
+    }
 }
