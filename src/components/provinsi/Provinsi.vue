@@ -45,10 +45,10 @@ const apiServiceProvinsi = new APIServiceIndonesia()
                     dataSembuh.push(day.Kasus_Semb)
                     dataMeninggal.push(day.Kasus_Meni)
                     }
-                    this.totalProvinsi = dataProvinsi[dataProvinsi - 1]
-                this.totalPositif = dataPositif[dataPositif.length - 1]
-                this.totalSembuh = dataSembuh[dataSembuh.length - 1]
-                this.totalMeninggal = dataMeninggal[dataMeninggal.length - 1]
+                    this.totalProvinsi = dataProvinsi[dataProvinsi]
+                this.totalPositif = dataPositif[dataPositif.lengt]
+                this.totalSembuh = dataSembuh[dataSembuh.length]
+                this.totalMeninggal = dataMeninggal[dataMeninggal.length]
 
              })
              .catch(error => {console.error(error) })
