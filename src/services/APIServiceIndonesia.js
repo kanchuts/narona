@@ -8,6 +8,11 @@ export class APIServiceIndonesia {
         return API_URL
     }
 
+    httpGet = async function (url) {
+        const response = await axios.get(url);
+        return response;
+    }
+
     getDataIndonesia() {
         const url = `${API_URL}/country/indonesia`
         let data = axios.get(url).then(Response => Response.data)
@@ -18,14 +23,13 @@ export class APIServiceIndonesia {
     getStatIndonesia () {
         const url = `${API_URL1}`
         let data = axios.get(url).then(Response => Response.data)
-        
+
         return data
     }
 
     getDataProvinsi(){
-        const url = `${API_URL1}/provinsi`
-        let data = axios.get(url).then(Response => Response.data)
-
-        return data
+        let url = `https://indonesia-covid-19.mathdro.id/api/provinsi`;
+        let data = this.httpGet(url);
+        return data;
     }
 }

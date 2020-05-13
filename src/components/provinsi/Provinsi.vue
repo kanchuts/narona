@@ -1,74 +1,75 @@
 <template>
-
-        <table>
-        </table>
-
+    <div>
+        <br>
+        <p class="title"><strong>Data Per Provinsi</strong></p>
+        <Grid :data-items="sortedData" :columns="columns">
+        </Grid>
+    </div>
 </template>
 
- <script>
-    import { APIServiceIndonesia } from '../../services/APIServiceIndonesia.js'
-    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+<script>
+    import {
+        Grid
+    } from '@progress/kendo-vue-grid';
+    import { APIServiceIndonesia } from '../../services/APIServiceIndonesia';
+    import '@progress/kendo-theme-default/dist/all.css';
 
-    // import moment from 'moment'
+    const apiCovidIndonesia = new APIServiceIndonesia();
 
-const apiServiceProvinsi = new APIServiceIndonesia()
-
- export default {
-     name: "DataProvinsi",
-     components: {
-         // eslint-disable-next-line vue/no-unused-components
-         FontAwesomeIcon
-     },
-     data(){
-         return {
-             totalProvinsi:'',
-             totalPositif: '',
-             totalMeninggal: '',
-             totalSembuh: ''
-         }
-     },
-     methods: {
-         getStat () {
-            apiServiceProvinsi.getDataProvinsi().then((data) => {
-                    let dataProvinsi = []
-
-                    let dataPositif = []
-
-                    let dataSembuh = []
-
-                    let dataMeninggal = []
-
-                 // eslint-disable-next-line no-unused-vars
-                 for (let [i, day] of data.entries()){
-                     dataProvinsi.push(day.Provinsi)
-                    dataPositif.push(day.Kasus_Posi)
-                    dataSembuh.push(day.Kasus_Semb)
-                    dataMeninggal.push(day.Kasus_Meni)
+    export default {
+        name: "DataTableIndonesia",
+        components: {
+            Grid
+        },
+        data() {
+            return {
+                dataSet: [],
+                columns: [{
+                        field: 'provinsi',
+                        title: 'Provinsi'
+                    },
+                    {
+                        field: 'kasusPosi',
+                        title: 'Terinfeksi'
+                    },
+                    {
+                        field: 'kasusMeni',
+                        title: 'Meninggal'
+                    },
+                    {
+                        field: 'kasusSemb',
+                        title: 'Pulih'
                     }
-                    this.totalProvinsi = dataProvinsi[dataProvinsi]
-                this.totalPositif = dataPositif[dataPositif.lengt]
-                this.totalSembuh = dataSembuh[dataSembuh.length]
-                this.totalMeninggal = dataMeninggal[dataMeninggal.length]
+                ],
+                sort: [{
+                    field: 'provinsi',
+                    dir: 'asc'
+                }, {
+                    field: 'kasusPosi',
+                    dir: 'desc'
+                }]
+            };
+        },
+        methods: {
+            generateDataTable() {
+                apiCovidIndonesia.getDataProvinsi().then((data) => {
+                    this.dataSet = data.data.data;
+                });
+            }
+        },
+        computed: {
+            sortedData: {
+                get: function () {
+                    return this.dataSet
+                }
+            }
+        },
+        mounted() {
+            this.generateDataTable();
+        },
+    }
+</script>
 
-             })
-             .catch(error => {console.error(error) })
-             .finally(() => { this.isLoading = false})
-         }
-     },
-     mounted() {
-         this.getStat()
-     },
- }
- </script>
-<style>
-.cases{
-    margin-top: 5px;
-}
-.badan{
+<style scoped>
 
-    width: 70%;
-    margin-top: 20px;
-    left: 15%;
-
-}
 </style>

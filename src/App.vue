@@ -7,8 +7,15 @@
         <div class="card-header" id="chart-indoneisa"> INDONESIA </div>
         <chartIndonesia />
         <StatistikIndonesia />
-        </div>
-        <StatistikIndonesia />
+    </div>
+    <div class="card chart">
+        <div class="card-header" id="chart-global"> GLOBAL </div>
+        <Global/>
+        <GlobalStat/>
+    </div>
+    <div class="card">
+        <Provinsi/>
+    </div>
   </div>
 </template>
 
@@ -17,6 +24,9 @@
 import Header from './components/header.vue'
 import chartIndonesia from './components/dashboard/Indonesia.vue'
 import StatistikIndonesia from './components/dashboard/IndoStat.vue'
+import GlobalStat  from './components/dashboard/GlobalStat.vue'
+import Global from './components/dashboard/Global.vue'
+import Provinsi from './components/provinsi/Provinsi.vue'
 // import chart from './components/dashboard/Tumbal.vue'
 export default {
   name: 'App',
@@ -24,6 +34,9 @@ export default {
       Header,
       chartIndonesia,
       StatistikIndonesia,
+      GlobalStat,
+      Global,
+      Provinsi
     //   chart
   }
 }

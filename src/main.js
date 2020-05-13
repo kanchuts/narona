@@ -1,12 +1,27 @@
 import Vue from 'vue'
 import App from './App.vue'
+import List from './list.vue'
 import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm'
 Vue.config.productionTip = false
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 Vue.use(BootstrapVue);
-Vue.use(require('vue-moment'));
+
+const routes = {
+  '/': App,
+  '/list': List
+}
+
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  el: '#app',
+  data: {
+    currentRoute: window.location.pathname
+  },
+  computed: {
+    ViewComponent () {
+      return routes[this.currentRoute] 
+    }
+  },
+  render (h) { return h(this.ViewComponent) }
+})

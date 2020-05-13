@@ -5,8 +5,8 @@
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-navbar-nav class="ml-auto">
             <b-navbar-nav>
-                <b-nav-item href="#">DASHBOARD</b-nav-item>
-                <b-nav-item href="#">LIST PROVINSI</b-nav-item>
+                <b-nav-item href="http://localhost:8080">DASHBOARD</b-nav-item>
+                <b-nav-item href="http://localhost:8080/list">LIST PROVINSI</b-nav-item>
                 <b-nav-item href="#">KONTAK</b-nav-item>
             </b-navbar-nav>
         </b-navbar-nav>
