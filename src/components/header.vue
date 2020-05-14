@@ -7,7 +7,7 @@
             <b-navbar-nav>
                 <b-nav-item href="http://localhost:8080">DASHBOARD</b-nav-item>
                 <b-nav-item href="http://localhost:8080/list">LIST PROVINSI</b-nav-item>
-                <b-nav-item href="#">KONTAK</b-nav-item>
+                <b-nav-item href="http://localhost:8080/contact">KONTAK</b-nav-item>
             </b-navbar-nav>
         </b-navbar-nav>
         </b-navbar>
