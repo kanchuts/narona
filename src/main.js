@@ -6,6 +6,9 @@ import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm'
 Vue.config.productionTip = false
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
+import 'bootstrap-css-only/css/bootstrap.min.css'
+import 'mdbvue/lib/css/mdb.min.css'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 Vue.use(BootstrapVue);
 
@@ -22,7 +25,7 @@ new Vue({
   },
   computed: {
     ViewComponent () {
-      return routes[this.currentRoute] 
+      return routes[this.currentRoute]
     }
   },
   render (h) { return h(this.ViewComponent) }

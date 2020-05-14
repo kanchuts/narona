@@ -3,9 +3,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <Header></Header>
-        <div class="card">
+
             <Contact/>
-        </div>
+
     </div>
 
 </template>
@@ -48,8 +48,5 @@ export default({
     left: 15%;
     margin-bottom: 25px;
 }
-
-
-
 
 </style>

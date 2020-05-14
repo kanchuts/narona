@@ -13,9 +13,6 @@
         <Global/>
         <GlobalStat/>
     </div>
-    <div class="card">
-        <Provinsi/>
-    </div>
   </div>
 </template>
 
@@ -26,7 +23,6 @@ import chartIndonesia from './components/dashboard/Indonesia.vue'
 import StatistikIndonesia from './components/dashboard/IndoStat.vue'
 import GlobalStat  from './components/dashboard/GlobalStat.vue'
 import Global from './components/dashboard/Global.vue'
-import Provinsi from './components/provinsi/Provinsi.vue'
 // import chart from './components/dashboard/Tumbal.vue'
 export default {
   name: 'App',
@@ -35,8 +31,7 @@ export default {
       chartIndonesia,
       StatistikIndonesia,
       GlobalStat,
-      Global,
-      Provinsi
+      Global
     //   chart
   }
 }
@@ -49,6 +44,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  padding-bottom: 20px
 }
 .m1, .m2, .m3, .chart {
   /* Add shadows to create the "card" effect */
@@ -72,3 +68,5 @@ export default {
     background: #DFDCD4;
 }
 </style>
+
+
